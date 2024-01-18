@@ -14,6 +14,8 @@ Capture d'écran de l'expérience VR :
    ```bash
    git clone https://github.com/CAZCB/GOING-AROUND
 
+OR you can find it on my GLITCH : https://glitch.com/~going-around
+
 
 #Modules / Librairies / Scripts
 
