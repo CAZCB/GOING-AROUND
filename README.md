@@ -6,12 +6,13 @@ Ce projet offre une expérience immersive de l'exploration d'un système solaire
 DImension méditative de la VR.
 
 ## Capture d'écran
-![Capture d'écran de l'expérience VR](lien_vers_capture_d_ecran.gif)
+Capture d'écran de l'expérience VR :
+
 
 ## Procédure d'installation / de lancement
 1. Clonez ce dépôt sur votre machine locale.
    ```bash
-   git clone https://lien-vers-votre-repo.git
+   git clone https://github.com/CAZCB/GOING-AROUND
 
 
 Modules / Librairies / Scripts
