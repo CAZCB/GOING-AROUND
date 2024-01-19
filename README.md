@@ -6,7 +6,7 @@ Ce projet offre une expérience immersive de l'exploration d'un système solaire
 DImension méditative de la VR.
 
 ## Capture d'écran
-Capture d'écran de l'expérience VR :
+Lien vers le GIF de l'expérience VR : https://github.com/CAZCB/GOING-AROUND/blob/main/FINALGIF.gif
 
 
 ## Procédure d'installation / de lancement
