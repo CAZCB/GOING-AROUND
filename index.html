@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Going around</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@3.2.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-billboard-component/dist/aframe-billboard-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+</head>
+
+<body>
+<!--SCENE POUR L'UNIVERS-->
+<a-scene physics="debug: true" shadow="type:pcfsoft" cursor="rayOrigin: mouse" keyboard-shortcuts cursor-listener>
+
+<!-- Ajout de musique d'espace -->
+ <a-sound src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/x2mate.com%20-%20All%20Planet%20Sounds%20From%20Space%20(In%20our%20Solar%20System)%20(128%20kbps).mp3?v=1705601972719.mp3" autoplay="true" position="0 0 0" volume="1" loop="true"></a-sound>
+
+<!--OBJETS PRINCIPAUX -->
+<!-- BACKGROUND -->
+<a-sky src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/galaxy_1048-4056.jpg?v=1705497002623" 
+rotation="0" 
+animation="property: rotation; to: -7.5 8.5 -13,4; dur: 75000; loop: true">
+</a-sky>
+
+<!-- Soleil / Parent de l'univers -->
+<a-entity position="0 0 -105">
+<a-sphere src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/texture_planet_3d_model_c4d_max_obj_fbx_ma_lwo_3ds_3dm_stl_3593006.jpg?v=1705402035939" position="0 0 0" radius="6.5" color="" rotation="0 0 0" id="sun" animation="property: rotation; to: 25 0 360; dur: 900000; loop: true" id="sun" material="shader: flat;"
+             event-set__enter="_event: mouseenter; _target: #text-sun; visible: true"
+             event-set__leave="_event: mouseleave; _target: #text-sun; visible: false">>>
+  <a-text value="Soleil\ Etoile principale du systeme." position="0 8 0" look-at="[camera]" color="white" visible="false" id="text-sun" scale="3 3 3" brightness="100"
+  ></a-text>
+  <!-- Ajout d'une lumière directionnelle attachée au soleil -->
+<a-light type="point" scale="4 4 4" position="0 0 0" target="#sun" intensity="1.5" distance="200" angle="360" penumbra="6.6" castShadow="true"></a-light>
+</a-sphere>
+
+<!-- Planète 1 -->
+<a-ring radius-inner="18.9" radius-outer="19.2" rotation="-45 -90 -90" material="color: white; side: double;"  animation="property: rotation; to: -74 83 -60; dur: 90000; loop: true" >
+  <a-sphere src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/images%20(3).jpg?v=1705497708896" position="18.9 0 0" radius="2.2" color="" rotation="90 0 0" id="planet1" animation="property: rotation; to: -78 56 -34; dur: 90000; loop: true"
+            event-set__enter="_event: mouseenter; _target: #text-planet1; visible: true"
+            event-set__leave="_event: mouseleave; _target: #text-planet1; visible: false">
+  <!-- Description de la planète -->
+  <a-text value="Planete 1-VD123587\nC'est une planete fascinante avec des caracteristiques uniques. Sa surface est recouverte d'un paysage extraordinaire, mélangeant des fosses majestueuses et des plaines infinies de magma. Les nuances de couleurs créent un spectacle visuel éblouissant. Des explorateurs ont rapporte des phenomenes meteorologiques etranges, tels que des tempetes electriques colorees. Cette planete est un mystere a explorer." position="0 7 0"  look-at="[camera]" rotation="0 0 0" color="white" visible="false" id="text-planet1" scale="3 3 3" billboard>
+  </a-text>
+</a-sphere>
+</a-ring>
+
+<!-- Planète 2 -->
+<a-ring radius-inner="25" radius-outer="25.3" rotation="-90 72 43" material="color: white; side: double;"  animation="property: rotation; to: 89 70 30; dur: 90000; loop: true">
+<a-sphere src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/texture_planet_3d_model_c4d_max_obj_fbx_ma_lwo_3ds_3dm_stl_3593014.jpg?v=1705497699482" position="25 0 0" radius="0.7" color="" rotation="0 0 0" id="planet2" animation="property: rotation; to: -22 -120 72; dur: 90000; loop: true"
+            event-set__enter="_event: mouseenter; _target: #text-planet2; visible: true"
+            event-set__leave="_event: mouseleave; _target: #text-planet2; visible: false">>>
+<!-- Description de la planète -->
+<a-text value="Planète 2-672D23\nUne jeune et petite planete rocheuse situee a une distance proche de son soleil. Sa surface est couverte de crateres et de formations geologiques uniques. Les observations suggerent la presence de mineraux rares. Malgré sa taille modeste, cette planete offre un paysage intrigant pour les astronomes et les geologues interstellaires. Non sans rappeler la planete de Dune" position="0 5 0" color="white" visible="true" id="text-planet2" scale="3 3 3" billboard>
+</a-text>
+</a-sphere>
+</a-ring>
+
+<!-- Planète 3 / Avec lunes -->
+<a-ring radius-inner="47.2" radius-outer="47.5" rotation="0 180 0" material="color: white; side: double;"  animation="property: rotation; to: -12 -67 98; dur: 90000; loop: true">
+<a-sphere src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/images%20(1).jpg?v=1705402049711" position="47.2 0 0" radius="2.75" color="" rotation="0 0 0" id="planet3" animation="property: rotation; to: 12 0 60; dur: 25000; loop: true"
+          event-set__enter="_event: mouseenter; _target: #text-planet3; visible: true"
+          event-set__leave="_event: mouseleave; _target: #text-planet3; visible: false">>>>
+ <!-- Description de la planète -->
+<a-text value="Planète 3 - 1435G6D\n Une planète gigantesque entourée d'un anneau resplendissant. La surface de la planète est dominée par des océans immenses et des continents expansifs. Des lunes en orbite ajoutent à la majesté de cette planète. Les explorateurs sont intrigués par la possibilité de découvrir des formes de vie extraterrestres dans les vastes océans de cette planète." position="0 6.5 0" color="white" visible="true" id="text-planet3" scale="3 3 3" billboard></a-text>
+  <!-- Lune 1 en orbite -->
+ <a-ring radius-inner="3.5" radius-outer="3.6" rotation="-30 180 0" material="color: white; side: double;"  animation="property: rotation; to: -12 -67 98; dur: 90000; loop: true">
+ <a-sphere src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/360_F_221479270_5WgcQKg1sYkwsp7ba2nLh0v2A7CGVqHR.jpg?v=1705494436073" position="4.5 0 0" radius="0.4" color="" rotation="0 0 0" id="planet2" animation="property: rotation; to: -22 -120 72; dur: 90000; loop: true" receiveshadow="true">
+ </a-sphere>
+ </a-ring>
+
+ <!-- Lune 2 en orbite -->
+ <a-ring radius-inner="4.8" radius-outer="4.9" rotation="0 80 -54" material="color: white; side: double;"  animation="property: rotation; to: -12 -67 98; dur: 90000; loop: true">
+ <a-sphere src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/360_F_221479270_5WgcQKg1sYkwsp7ba2nLh0v2A7CGVqHR.jpg?v=1705494436073" position="4.8 0 0" radius="0.55" color="grey" rotation="0 0 0" id="planet2" animation="property: rotation; to: -22 -120 72; dur: 90000; loop: true" receiveshadow="true">
+ </a-sphere>
+</a-sphere>
+</a-ring>
+
+<!-- Planète 4 -->
+<a-ring radius-inner="67.2" radius-outer="67.5" rotation="18 -80 0" material="color: white; side: double;"  animation="property: rotation; to: 56 -2 -67; dur: 90000; loop: true">
+<a-sphere src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/t%C3%A9l%C3%A9chargement%20(6).jpg?v=1705497678825" position="67.2 0 0" radius="4.5" color="" rotation="0 0 0" id="planet4" animation="property: rotation; to: 12 -100 42; dur: 90000; loop: true"
+          event-set__enter="_event: mouseenter; _target: #text-planet4; visible: true"
+          event-set__leave="_event: mouseleave; _target: #text-planet4; visible: false">>>>
+  <!-- Description de la planète -->
+  <a-text value="Planète 4- 46H4298725Z\nUne planete massive avec une atmosphere dense. Les scientifiques pensent que cette planete pourrait abriter des conditions propices à la vie. Des missions d'exploration sont planifiees pour etudier de pres cette planete et comprendre les secrets de son ecosysteme potentiel." position="0 7 0" color="white" visible="false" id="text-planet4" scale="3 3 3" billboard></a-text>
+</a-sphere>
+</a-ring>
+
+<!-- Planète 5 -->
+<a-ring radius-inner="75.2" radius-outer="75.5" rotation="97 0 18.5" material="color: white; side: double;"  animation="property: rotation; to: -34 67 -54; dur: 90000; loop: true">
+<a-sphere src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/texture_planet_3d_model_c4d_max_obj_fbx_ma_lwo_3ds_3dm_stl_3593013.jpg?v=1705402042843" position="75.2 0 0" radius="2.3" color="" rotation="0 0 0" id="planet5" animation="property: rotation; to: 22 -20 2; dur: 90000; loop: true"
+          event-set__enter="_event: mouseenter; _target: #text-planet5; visible: true"
+          event-set__leave="_event: mouseleave; _target: #text-planet5; visible: false">>>>
+  <a-text value="Planète 5 - 154762H\nUne petite planete rocheuse, mais sa surface abrite des formations geologiques intrigantes. Des canyons profonds et des montagnes escarpees creent un paysage spectaculaire. Les scientifiques etudient cette planete pour comprendre son histoire geologique et son evolution." position="0 7 0" color="white" visible="false" id="text-planet5" scale="3 3 3" billboard></a-text>
+</a-sphere>
+</a-ring>
+
+<!-- Planète 6 / Avec barrière d'astéroïdes dnas son champ de gravité -->
+<a-ring radius-inner="78.7" radius-outer="79" rotation="-90 0 0" material="color: white; side: double;"  animation="property: rotation; to: 18 43 27; dur: 90000; loop: true">
+<a-sphere src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/85363866-frozen-planet-texture-panorama-360-degrees-computer-generated-abstract-background-3d-rendering.jpg?v=1705497683968" position="78.9 0 0" radius="1.5" color="" rotation="0 0 0" id="planet6" animation="property: rotation; to: -82 1550 72; dur: 90000; loop: true"
+          event-set__enter="_event: mouseenter; _target: #text-planet6; visible: true"
+          event-set__leave="_event: mouseleave; _target: #text-planet6; visible: false">>>>
+<!-- Description de la planète -->
+<a-text value="Planete6-185473\nUne planete glacee avec des temperatures extremement basses. Des etendues infinies de glace et de neige caracterisent sa surface. Des phenomenes atmospheriques uniques creent des aurores boreales eblouissantes. Des missions spatiales sont en cours de planification pour explorer cette planete et en apprendre davantage sur son climat extreme." position="0 7 0" color="white" visible="true" id="text-planet6" scale="3 3 3" billboard></a-text>
+
+  <!-- Barrière d'astéroïdes -->
+<a-entity id="asteroid-belt">
+  <!-- Utilisation d'un composant pour générer plusieurs astéroïdes -->
+  <a-entity asteroid-belt-generator></a-entity>
+  </a-entity>
+  
+  <!-- Définir le composant pour générer la barrière d'astéroïdes -->
+  <a-entity mixin="asteroid" id="asteroid-template"></a-entity>
+  
+  <!-- Mixin pour définir la géométrie et le matériau d'un astéroïde -->
+  <a-mixin id="asteroid" geometry="primitive: sphere; radius: 0.1" material="color: gray"></a-mixin>
+  
+  <script>
+  AFRAME.registerComponent('asteroid-belt-generator', {
+  init: function () {
+    // Générer une barrière d'astéroïdes
+    for (let i = 0; i < 150; i++) {
+      let asteroid = document.createElement('a-entity');
+      asteroid.setAttribute('mixin', 'asteroid');
+  
+      // Position aléatoire dans un espace plus grand autour du système solaire
+      asteroid.setAttribute('position', `${(Math.random() * 15 - 5)} ${(Math.random() * 15 - 5)} ${(Math.random() * 15 - 5)}`);
+      
+      // Description de l'astéroïde
+      asteroid.innerHTML = `<a-text value="Barrière d'astéroïdes ${i + 1}\nUn fragment spatial." position="0 0.2 0" color="white" visible="false" scale="3 3 3" billboard></a-text>`;
+      
+      // Événement de survol de la souris pour afficher le texte
+      asteroid.setAttribute('event-set__mouseenter', '_event: mouseenter; visible: true');
+      asteroid.setAttribute('event-set__mouseleave', '_event: mouseleave; visible: false');
+
+      this.el.appendChild(asteroid);
+    }
+  }
+  });
+  </script>
+  </a-sphere>
+</a-ring>
+
+<!-- Planète 7 / Avec Anneaux -->
+<a-ring radius-inner="90.2" radius-outer="90.5" rotation="0 0 0" material="color: white; side: double;"  animation="property: rotation; to: -90 37 -76; dur: 90000; loop: true">
+<a-sphere src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/images%20(2).jpg?v=1705497716570" position="90 0 0" radius="2.3" color="" rotation="0 0 0" id="planet7" animation="property: rotation; to: -22 320 72; dur: 90000; loop: true"
+event-set__enter="_event: mouseenter; _target: #text-planet7; visible: true"
+event-set__leave="_event: mouseleave; _target: #text-planet7; visible: false">>>>
+<!-- Description de la planète -->
+<a-text value="Planete 7- AB185473\nUne planete geante avec un systeme d'anneaux complexe. Sa surface est composee de gaz et de nuages tourbillonnants. Des nuances de couleurs vives creent un spectacle saisissant. Les astronomes sont fascines par les mouvements complexes de ses anneaux, offrant des opportunites uniques pour des etudes astronomiques approfondies." position="0 7 0" color="white" visible="false" id="text-planet7" scale="3 3 3" billboard></a-text>
+  <a-ring radius-inner="4.2" radius-outer="4.7" rotation="-90 7 90" material="color: violet; side: double;"  animation="property: rotation; to: 90 -37 -76; dur: 90000; loop: true" material="shader: flat;"></a-ring>
+<a-ring radius-inner="2.7" radius-outer="3.4" rotation="180 18 -90" material="color: green; side: double;"  animation="property: rotation; to: -90 37 -76; dur: 90000; loop: true"material="shader: flat;"><a-ring>
+<a-ring radius-inner="5.7" radius-outer="6.2" rotation="-180 -18 -90" material="color: magenta; side: double;"  animation="property: rotation; to: 15 -37 -76; dur: 90000; loop: true"material="shader: flat;"><a-ring>
+<a-ring radius-inner="6.7" radius-outer="6.3" rotation="-80 18 120" material="color: green; side: double;"  animation="property: rotation; to: 15 -37 -76; dur: 90000; loop: true"material="shader: flat;"><a-ring>
+</a-sphere>
+</a-ring>
+
+<!-- ELEMENTS SECONDAIRES-->
+<!-- Barrière d'astéroïdes -->
+<a-entity id="asteroid-belt">
+<!-- Utilisation d'un composant pour générer plusieurs astéroïdes -->
+<a-entity asteroid-belt-generator></a-entity>
+</a-entity>
+
+<!-- Définir le composant pour générer la barrière d'astéroïdes -->
+<a-entity mixin="asteroid" id="asteroid-template"></a-entity>
+
+<!-- Mixin pour définir la géométrie et le matériau d'un astéroïde -->
+<a-mixin id="asteroid" geometry="primitive: sphere; radius: 0.1" material="color: gray"></a-mixin>
+
+<script>
+AFRAME.registerComponent('asteroid-belt-generator', {
+init: function () {
+  // Générer une barrière d'astéroïdes
+  for (let i = 0; i < 2000; i++) {
+    let asteroid = document.createElement('a-entity');
+    asteroid.setAttribute('mixin', 'asteroid');
+
+    // Position aléatoire dans un espace plus grand autour du système solaire
+    asteroid.setAttribute('position', `${(Math.random() * 70 - 50)} ${(Math.random() * 70 - 50)} ${(Math.random() * 70 - 50)}`);
+    this.el.appendChild(asteroid);
+  
+  }
+}
+});
+</script>
+
+ <!-- Champ d'astéroïdes -->
+ <a-entity 
+  id="asteroids" 
+  position="0 0 0" 
+  animation="property: rotation; to: -24 60 87; dur: 90000; loop: true">
+  <!-- Utilisation d'un composant pour générer plusieurs astéroïdes -->
+  <a-entity asteroid-generator></a-entity>
+  </a-entity>
+    
+  <!-- Définir le composant pour générer les astéroïdes -->
+  <a-entity 
+  mixin="asteroid" 
+  id="asteroid-template">
+  </a-entity>
+    
+  <!-- Mixin pour définir la géométrie et le matériau d'un astéroïde -->
+  <a-mixin 
+  id="asteroid" 
+  geometry="primitive: sphere; radius: 0.05" 
+  material="color: grey">
+  </a-mixin>
+    
+<script>
+AFRAME.registerComponent('asteroid-generator', {
+init: function () {
+  // Générer un champ d'astéroïdes
+  for (let i = 0; i < 6500; i++) {
+    let asteroid = document.createElement('a-entity');
+    asteroid.setAttribute('mixin', 'asteroid');
+    // Position aléatoire
+    asteroid.setAttribute('position', `${Math.random() * 150 - 30} ${Math.random() * 150 - 30} ${Math.random() * 150 - 30}`);
+    this.el.appendChild(asteroid);
+  }
+  }
+ });
+ </script>
+
+<!--Objects complémentaires-->
+<a-sphere src="https://cdn.glitch.global/2934f4a6-0f35-419e-91b1-2685de690aa2/earth_like_planet_texture_by_kvikki_d7pxfv4-pre.jpg?v=1705402028891" radius="0.5" position="-72 0.5 -3" color="red" animation="property: position; to: 84 -25 74; dur: 37500; loop: true"></a-sphere>></a-sphere>
+<a-sphere src="" radius="1" position="-37 86.5 -3" color="dark gray" animation="property: position; to: 12 -25 35; dur: 28500; loop: true"></a-sphere>></a-sphere>
+<a-sphere src="" radius="0.5" position="72 54.5 1" color="gray" animation="property: position; to: -126 - 72 74; dur: 16500; loop: true"></a-sphere>></a-sphere>
+
+<a-sphere src="" radius="2.5" position="72 37.5 -3" color="yellow" animation="property: position; to: 84 -25 74; dur: 387500; loop: true"></a-sphere>></a-sphere>
+<a-sphere src="" radius="4.5" position="900 -240 -3" color="dark gray" animation="property: position; to: -89 53 92; dur: 28500; loop: true"></a-sphere>></a-sphere>
+<a-sphere src="" radius="0.5" position="72 76.5 -43" color="dark blue" animation="property: position; to: -32 87 45; dur: 7500; loop: true"></a-sphere>></a-sphere>
+
+<a-sphere src="" radius="0.5" position="-72 -3.5 -12" color="dark red" animation="property: position; to: 84 -127 74; dur: 37500; loop: true"></a-sphere>></a-sphere>
+<a-sphere src="" radius="1.5" position="98 -270 -3" color="dark gray" animation="property: position; to: -13 -25 89; dur: 14500; loop: true"></a-sphere>></a-sphere>
+<a-sphere src="" radius="3.5" position="0 -56 270" color="gray" animation="property: position; to: 27 -89 -52; dur: 43500; loop: true"></a-sphere>></a-sphere>
+
+</a-entity>
+
+<a-entity position="0 1.6 0">
+  <!-- Camera component with cursor and wasd-controls for movement -->
+  <a-camera look-controls wasd-controls position="0 0 0">
+    <!-- Cursor component for interaction -->
+    <a-cursor></a-cursor>
+  </a-camera>
+  </a-entity>
+</a-scene>
+</body>
+</html>
