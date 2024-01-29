@@ -9,7 +9,10 @@ DImension méditative de la VR.
 GIF de l'expérience
 ![](https://github.com/CAZCB/GOING-AROUND/blob/main/FINALGIF.gif)
 
-Lien vers le GIF de l'expérience VR : https://github.com/CAZCB/GOING-AROUND/blob/main/FINALGIF.gif
+
+
+
+
 
 
 ## Procédure d'installation / de lancement
