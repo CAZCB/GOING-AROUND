@@ -28,40 +28,39 @@ A-Frame Billboard Component (https://github.com/IdeaSpaceVR/aframe-billboard-com
 Les textures et modèles 3D utilisés sont fournis par Glitch.
 
 Musique d'espace par Aryanatomy (YouTube) 
-Copyright Disclaimer under section 107 of the Copyright Act of 1976, allowance is made for “fair use” for purposes such as criticism, comment, news reporting, teaching, scholarship, 
-education and research. Fair use is a use permitted by copyright statute that might otherwise be infringing.
+Copyright Disclaimer under section 107 of the Copyright Act of 1976, allowance is made for “fair use” for purposes such as criticism, comment, news reporting, teaching, scholarship, education and research. Fair use is a use permitted by copyright statute that might otherwise be infringing.
 
 Sun sounds:   
  • Sounds of the Sun  
+ 
 Mercury sounds:   
-
  • Sounds Of Mercury. Pretty Creepy Sounds.  
+ 
 Venus sounds:   
-
  • Sound Of Venus  
+ 
 Earth sounds:   
-
  • The Voice Of Our Earth  
+ 
 Moon sounds:   
-
  • Video  
+ 
 Mars sounds:   
-
  • Video  
+ 
 Jupiter sounds:   
-
  • Jupiter sounds (so strange!) NASA-Voy...  
+
 Saturn sounds:   
-
  • Video  
+
 Uranus sounds:   
-
  • Sounds of Uranus and Uranus rings  
+
 Neptune sounds:   
-
  • The Neptune's sounds  
-Pluto sounds:   
 
+Pluto sounds:   
  • The Sound Of Pluto  
 (Licence : Creative Commons).
 
