@@ -5,9 +5,7 @@
 Ce projet offre une expérience immersive de l'exploration d'un système solaire virtuel en réalité virtuelle (VR). L'utilisateur peut naviguer à travers différentes planètes, obtenir des informations détaillées lorsqu'il survole les planètes et observer des éléments spatiaux fascinants.
 DImension méditative de la VR.
 
-## Capture d'écran
-GIF de l'expérience
-
+## Capture d'écran - GIF de l'expérience
 
 
 
